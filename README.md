@@ -115,15 +115,15 @@ Although you can get subscriptions with ytfzf, it's not the most efficient way t
 2. Large subscription files will take a long time to load.
 3. You have to manually check for new videos.
 
-Instead we can use rss to get updates for new videos. Feeds can be viewed in an rss feed reader such as [`newsboat`](https://github.com/newsboat/newsboat) and be updated automatically in the background. I suggest using Luke Smith's [dot files](https://github.com/LukeSmithxyz/voidrice/blob/master/.config/newsboat/config) and [scripts](https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/cron/newsup) to quickly set up newsboat and a cronjob to do updates. There are many other readers you could use, but I like newsboat because it's terminal based and can open videos in mpv with a single key press.
+Instead we can use RSS to get updates for new videos. Feeds can be viewed in an RSS feed reader such as [`newsboat`](https://github.com/newsboat/newsboat) and be updated automatically in the background. I suggest using Luke Smith's [dot files](https://github.com/LukeSmithxyz/voidrice/blob/master/.config/newsboat/config) and [scripts](https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/cron/newsup) to quickly set up newsboat and a cronjob to do updates. There are many other readers you could use, but I like newsboat because it's terminal based and can open videos in mpv with a single key press.
 
-There are two ways to get an rss feed link for YouTube:
+There are two ways to get an RSS feed link for YouTube:
 
-1. Search an [`invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped) instance for the channel and click the rss symbol. 
+1. Search an [`invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped) instance for the channel and click the RSS symbol. 
 
 The link should look something like this: `https://pa.il.ax/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
-2. Use YouTube's official rss which comes with some extra info. To get this you need to know a channel's ID. Some channels will have this in the url, others (with custom urls) you will have to look at the source code of the page and ctrl+f channel ID to find it. 
+2. Use YouTube's official RSS which comes with some extra info. To get this you need to know a channel's ID. Some channels will have this in the url, others (with custom urls) you will have to look at the source code of the page and ctrl+f channel ID to find it. 
 
 The link should look something like this: `https://www.youtube.com/feeds/videos.xml?channel_id=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
