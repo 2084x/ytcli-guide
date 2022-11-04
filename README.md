@@ -119,7 +119,7 @@ Instead we can use RSS to get updates for new videos. Feeds can be viewed in an 
 
 There are two ways to get an RSS feed link for YouTube:
 
-1. Search an [`invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped) instance for the channel and click the RSS symbol. 
+1. Search an [`Invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped) instance for the channel and click the RSS symbol. 
 
 The link should look something like this: `https://pa.il.ax/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
@@ -129,7 +129,7 @@ The link should look something like this: `https://www.youtube.com/feeds/videos.
 
 # Other stuff of interest
 * [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - An extension for firefox and chromium-based browsers that lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
-* [`invidious`](https://github.com/iv-org/invidious) - Light weight, privacy respecting front end for YouTube.
+* [`Invidious`](https://github.com/iv-org/invidious) - Light weight, privacy respecting front end for YouTube.
 * [`Piped`](https://github.com/TeamPiped/Piped) - Light weight, privacy respecting front end for YouTube with many extra features.
 * [`HyperPipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Privacy respecting front end for YouTube Music.
 * [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - YouTube front end for android with many extra features.
