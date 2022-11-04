@@ -109,10 +109,11 @@ Scrape your subscription file and sort by upload date.
 `sub="ytfzf -c SI --sort"`
 
 # Tips for ytfzf
+* Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
+* ctrl-j/k moves you up and down the list of search results.
+* alt-p will scrape the next page of search results.
 * You can use tab to select and open multiple videos. First selected video will play and others will be added to the playlist in order.
 * ctrl-a (with my fzf settings) will allow you to select and open all videos. Useful for playlists.
-* alt-p will scrape the next page of search results.
-* ctrl-j/k moves you up and down the list of search results.
 * You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should be set up.
 * If you use dwm + swallow patch and want to loop menus, add `is_detach=1` to your config, otherwise thumbnails and menus will break when the window is restored.
 
