@@ -11,8 +11,9 @@ This repository is intended to provide a consolidated guide for accessing YouTub
 * [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) - For downloading videos.
 
 You should already have these, but just in case:
-* [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) - For playing network streams.
-* [`wget`](https://github.com/mirror/wget) - For making scrapes.
+* [`ffmpeg`](https://github.com/FFmpeg/FFmpeg)
+* [`wget`](https://github.com/mirror/wget)
+* [`curl`](https://github.com/curl/curl)
 
 # Scripts for mpv
 
