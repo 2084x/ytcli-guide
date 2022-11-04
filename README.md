@@ -20,7 +20,9 @@ You should already have these, but just in case:
 
 Scripts should be placed in `~/.config/mpv/scripts`.
 
-Scripts sometimes have their own configs, so make sure to check for them. These belong in `~/.config/mpv/script-opts`.
+Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`.
+
+Some scripts have 'configs' inside the script itself. 
 
 * [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) - Allows you to select video quality.
 * [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) - Fetches recommended videos for the current video.
@@ -33,9 +35,9 @@ Some I don't use but may be of interest:
 
 * [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) / [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) - Two scripts to search YouTube from inside mpv.
 * [`mpv_sponsorblock_minimal`](https://github.com/bbhtt/mpv_sponsorblock_minimal) - Lightweight mpv_sponsorblock. Some features missing.
-* [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads network streams in the playlist by downloading to a local tmp file. Can be buggy and download audio and video out of sync.
-* [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) - Automatically change videos to your desired resolution. (I prefer to set this in my yt-dlp conf).
+* [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) - Automatically change videos to your desired resolution. (I prefer to set this in my yt-dlp config).
 * [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) - Download current video with a single key press.
+* [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads next video in the playlist by downloading to a local tmp file. Can be buggy and download audio and video out of sync.
 
 A full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
 
@@ -43,7 +45,7 @@ A full list of scripts for mpv can be found [here](https://github.com/mpv-player
 ## ytfzf
 ### `~/.config/ytfzf/conf.sh`
 
-This is the main conf file.
+This is the main config file.
 ```
 pages_to_scrape=1
 sub_link_count=5
@@ -53,7 +55,7 @@ url_handler_opts="--force-window=yes"
 
 ### `~/.config/ytfzf/submenu-conf.sh`
 
-This is the conf file for playlist and channel pages.
+This is the config file for playlist and channel pages.
 
 ```
 show_thumbnails=1
@@ -65,7 +67,9 @@ Increase page and sub counts to scrape more videos by default.
 
 Occasionally a video will play in audio only mode, so I like to force a window.
 
-I set FZF_DEFAULT_OPTS in my shell profile. If you don't do this you may want to set them in the ytfzf confs. It could look something like this: `FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:select-all"`
+I set FZF_DEFAULT_OPTS in my shell profile. If you don't do this you may want to set them in the ytfzf configs. It could look something like this: 
+
+`FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:select-all"`
 
 ## yt-dlp
 ### `~/.config/yt-dlp/config`
@@ -88,13 +92,21 @@ reset-on-next-file=pause # prevent video starting paused
 ```
 
 # Useful shell aliases
-`yts="ytfzf --type=all --thumbnail-quality=maxresdefault"` - Make a search for all types of results (channel, playlist and video) and download high quality thumbnails.
+Make a search for all types of results (channel, playlist and video) and download high quality thumbnails.
 
-`ytc="ytfzf --type=channel"` - Search for a channel and browse it's videos.
+`yts="ytfzf --type=all --thumbnail-quality=maxresdefault"` 
 
-`com="ytfzf -c comments --skip-thumb-download"` - Scrape comments of a video. Search term should be video link. Does not download channel avatars because they can sometimes cover up long comments.
+Search for a channel and browse it's videos.
 
-`sub="ytfzf -c SI --sort"` - Scrape your subscription file and sort by upload date.
+`ytc="ytfzf --type=channel"`
+
+Scrape comments of a video. Search term should be video link. Does not download channel avatars because they can sometimes cover up long comments.
+
+`com="ytfzf -c comments --skip-thumb-download"`
+
+Scrape your subscription file and sort by upload date.
+
+`sub="ytfzf -c SI --sort"`
 
 # Tips for ytfzf
 * You can use tab to select and open multiple videos. First selected video will play and others will be added to the playlist in order.
@@ -115,7 +127,7 @@ Instead we can use RSS to get updates for new videos. Feeds can be viewed in an 
 
 There are two ways to get an RSS feed link for YouTube:
 
-1. Use the built in RSS on [`Invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped). Search either front end instance for a channel and click the RSS symbol. 
+1. Use the built in RSS on [`Invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped). Search an instance of either front end for a channel and click the RSS symbol. 
 
 The link should look something like this (Invidious): `https://yewtu.be/feed/channel/UCs-QBT4qkj_YiQw1ZntDO3g`.
 
