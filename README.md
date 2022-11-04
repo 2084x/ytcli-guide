@@ -108,9 +108,9 @@ reset-on-next-file=pause # prevent video starting paused
 * You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should be set up.
 
 # Other stuff of interest
-* [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - an extension for firefox and chromium-based browsers that lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
-* [`invidious`](https://github.com/iv-org/invidious) - light weight, privacy respecting front end for YouTube.
-* [`Piped`](https://github.com/TeamPiped/Piped) - light weight, privacy respecting front end for YouTube with many extra features.
-* [`HyperPipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - privacy respecting front end for YouTube Music.
+* [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - An extension for firefox and chromium-based browsers that lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
+* [`invidious`](https://github.com/iv-org/invidious) - Light weight, privacy respecting front end for YouTube.
+* [`Piped`](https://github.com/TeamPiped/Piped) - Light weight, privacy respecting front end for YouTube with many extra features.
+* [`HyperPipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Privacy respecting front end for YouTube Music.
 * [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - YouTube front end for android with many extra features.
 * [`Libredirect`](https://github.com/libredirect/libredirect) - Extension to automatically redirect links to privacy respecting front ends.
