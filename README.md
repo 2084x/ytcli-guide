@@ -121,7 +121,9 @@ There are two ways to get an RSS feed link for YouTube:
 
 1. Search an [`Invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped) instance for the channel and click the RSS symbol. 
 
-The link should look something like this: `https://pa.il.ax/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
+The link should look something like this (Invidious): `https://yewtu.be/feed/channel/UCs-QBT4qkj_YiQw1ZntDO3g`.
+
+Or this (Piped): `https://pa.il.ax/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
 2. Use YouTube's official RSS which comes with some extra info. To get this you need to know a channel's ID. Some channels will have this in the url, others (with custom urls) you will have to look at the source code of the page and ctrl+f channel ID to find it. 
 
