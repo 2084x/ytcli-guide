@@ -132,11 +132,15 @@ There are two ways to get an RSS feed link for YouTube:
 
 The link should look something like this (Invidious): `https://yewtu.be/feed/channel/UCs-QBT4qkj_YiQw1ZntDO3g`.
 
-Or this (Piped): `https://pa.il.ax/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
+Or this (Piped): `https://piped.kavin.rocks/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
-2. Use YouTube's official RSS which comes with some extra info. Follow the first method to find the channel ID (the unique string of random numbers and letters), then slot it into the example link below.
+2. Use YouTube's official RSS Follow the first method to find the channel ID (the unique string of random numbers and letters), then slot it into the example link below.
 
 The link should look something like this: `https://www.youtube.com/feeds/videos.xml?channel_id=UCs-QBT4qkj_YiQw1ZntDO3g`.
+
+Currently Piped provides less information than YouTube and Invidious in it's feed. 
+
+Invidious also provides thumbnails, which neither Piped nor YouTube do.
 
 # Other stuff of interest
 * [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - An extension for firefox and chromium-based browsers that lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
