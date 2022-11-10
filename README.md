@@ -46,7 +46,7 @@ A full list of scripts for mpv can be found [here](https://github.com/mpv-player
 ### `~/.config/ytfzf/conf.sh`
 
 This is the main config file.
-```
+```sh
 pages_to_scrape=1
 sub_link_count=5
 show_thumbnails=1
@@ -57,7 +57,7 @@ url_handler_opts="--force-window=yes"
 
 This is the config file for playlist and channel pages.
 
-```
+```sh
 show_thumbnails=1
 url_handler_opts="--force-window=yes"
 enable_back_button=0
@@ -73,7 +73,8 @@ I set FZF_DEFAULT_OPTS in my shell profile. If you don't do this you may want to
 
 ## yt-dlp
 ### `~/.config/yt-dlp/config`
-```
+
+```sh
 -o ~/dl/%(title)s.%(ext)s
 --sponsorblock-remove default
 -S "height:2160"
@@ -86,7 +87,7 @@ The options in your yt-dlp config will be respected by mpv when playing network 
 
 Not going to include my entire config here, just the relevant parts.
 
-```
+```sh
 slang=eng,en # auto select eng subs where possible
 reset-on-next-file=pause # prevent video starting paused
 ```
@@ -141,6 +142,40 @@ The link should look something like this: `https://www.youtube.com/feeds/videos.
 Currently Piped provides less information than YouTube and Invidious in it's feed. 
 
 Invidious also provides thumbnails, which neither Piped nor YouTube do.
+
+# Important Update
+As of Late 2022 YouTube has updated the way they deliver videos, making it troublesome to scrape channels. As of now, when a channel is scraped you will only get 30 videos. The current work around is to scrape a playlist of all uploads, which every channel has. To do this you will need to add the following lines to `~/.config/ytfzf/conf.sh` and use `--all-videos` with your aliases. 
+
+```sh
+#keeps track of whether or not --all-videos is used
+CONFIG_invidious_all_videos=0
+
+#is run when --all-videos is parsed
+on_opt_parse_all_videos () {
+    CONFIG_invidious_all_videos=1
+
+   #returning 1 says to override the default  behavior (in this case that would be printing an error)
+    return 1
+}
+
+#is run right before it starts scraping
+ext_on_search () {
+    search=$1
+    scrape=$2
+
+    #only  want to change stuff if the scrape is invidious-channel and --all-videos was used.
+    if [ "$scrape" = "invidious-channel" ] && [ "$CONFIG_invidious_all_videos" -eq 1 ]; then
+        #overrides the current scraper
+        curr_scrape=invidious_playlist
+
+        #gets the channel id for the playlist link
+        set_real_channel_url_and_id "$search"
+
+        #overrides the search with a new one
+        _search="https://www.youtube.com/playlist?list=$channel_id"
+    fi
+}
+```
 
 # Other stuff of interest
 * [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - An extension for firefox and chromium-based browsers that lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
