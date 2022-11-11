@@ -7,7 +7,7 @@ This repository is intended to provide a consolidated guide for accessing YouTub
 # Contents
 
 * [`Programs`](#Programs)
-* [`Scripts`](#Scripts)
+* [`Scripts`](#Scripts for mpv)
 * [`Configuration`](#Configuration)
 * [`Aliases`](#Useful)
 * [`Tips`](#Tips)
