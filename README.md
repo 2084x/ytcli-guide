@@ -63,24 +63,16 @@ url_handler_opts="--force-window=yes"
 enable_back_button=0
 ```
 
-Increase page and sub counts to scrape more videos by default.
-
-Occasionally a video will play in audio only mode, so I like to force a window.
-
-You can optionally set `FZF_DEFAULT_OPTS` in these configs, but I prefer to set them in my shell profile. The options I use are: 
-
-`FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:select-all"`
-
 ## yt-dlp
 ### `~/.config/yt-dlp/config`
+
+These options will be respected by mpv when playing network streams. 
 
 ```sh
 -o ~/dl/%(title)s.%(ext)s
 --sponsorblock-remove default
--S "height:2160"
+-S "height:2160" 
 ```
-
-The options in your yt-dlp config will be respected by mpv when playing network streams. For example, I set my max resolution to be 4K, since anything higher always stutters.
 
 ## mpv
 ### `~/.config/mpv/mpv.conf`
@@ -102,6 +94,14 @@ yts="ytfzf --type=all --thumbnail-quality=maxresdefault" # Make a earch and down
 ytc="ytfzf --type=channel" # Search for a channel and browse it's videos.
 com="ytfzf -c comments --skip-thumb-download" # Scrape comments of a video. Search term should be video link.
 sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
+```
+
+### `~/.bash_profile`, `~/.zprofile` etc.
+
+You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
+
+```sh
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:select-all"
 ```
 
 # Tips for ytfzf
