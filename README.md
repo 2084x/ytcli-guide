@@ -1,6 +1,21 @@
 # ytcli-guide
 
-This repository is intended to provide a consolidated guide for accessing YouTube from the command line on linux.
+This repository is intended to provide a consolidated guide for accessing YouTube from the command line on Linux. Much of this guide is also applicable to other operating systems.
+
+---
+
+# Contents
+
+* [`Programs`](#Programs)
+* [`Scripts`](#Scripts)
+* [`Configuration`](#Configuration)
+* [`Aliases`](#Useful)
+* [`Tips`](#Tips)
+* [`RSS`](#RSS)
+* [`Important`](#Important)
+* [`Extra`](#Other)
+
+---
 
 # Programs
 
@@ -27,7 +42,7 @@ Some scripts have 'configs' inside the script itself.
 * [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) - Allows you to select video quality.
 * [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) - Fetches recommended videos for the current video.
 * [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) - Allows you to reload the current video if it freezes. Restarts where you left off.
-* [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other off topic segments in videos. Also adds markers on the osc timeline.
+* [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other video segments. Also adds markers for these on the osc timeline.
 * [`copy-permalink`](https://gist.github.com/2084x/699fe48cff983bcbaf532d82e1515269) - Copies link of current video. Useful with 'com' alias.
 * [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - When a file ends, keeps the gui open if it's a video and closes if it's audio. Useful if you want to scrape recommended videos after a video ends.
 
@@ -67,7 +82,7 @@ Increase page and sub counts to scrape more videos by default.
 
 Occasionally a video will play in audio only mode, so I like to force a window.
 
-I set FZF_DEFAULT_OPTS in my shell profile. If you don't do this you may want to set them in the ytfzf configs. It could look something like this: 
+You can optionally set `FZF_DEFAULT_OPTS` in these configs, but I prefer to set them in my shell profile. The options I use are: 
 
 `FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:select-all"`
 
@@ -135,16 +150,16 @@ The link should look something like this (Invidious): `https://yewtu.be/feed/cha
 
 Or this (Piped): `https://piped.kavin.rocks/feed/unauthenticated/rss?channels=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
-2. Use YouTube's official RSS Follow the first method to find the channel ID (the unique string of random numbers and letters), then slot it into the example link below.
+2. Use YouTube's official RSS. Follow the first method to find the channel ID (the unique string of random numbers and letters), then slot it into the example link below.
 
 The link should look something like this: `https://www.youtube.com/feeds/videos.xml?channel_id=UCs-QBT4qkj_YiQw1ZntDO3g`.
 
-Currently Piped provides less information than YouTube and Invidious in it's feed. 
+Piped feeds currently provide less information than YouTube and Invidious. 
 
-Invidious also provides thumbnails, which neither Piped nor YouTube do.
+Invidious provides thumbnails, which neither Piped nor YouTube do.
 
 # Important Update
-As of Late 2022 YouTube has updated the way they deliver videos, making it troublesome to scrape channels. As of now, when a channel is scraped you will only get 30 videos. The current work around is to scrape a playlist of all uploads, which every channel has. To do this you will need to add the following lines to `~/.config/ytfzf/conf.sh` and use `--all-videos` with your aliases. 
+As of Late 2022 YouTube has updated the way videos display on channel pages, making it troublesome to scrape them. Previously when a channel was scraped you would get all videos, but now you will only get 30 (the first page). The current work around is to scrape the channel as a playlist, since every channel has one for all it's videos. To do this you will need to add the following lines to `~/.config/ytfzf/conf.sh` and use the flag `--all-videos` with your aliases. 
 
 ```sh
 #keeps track of whether or not --all-videos is used
@@ -178,9 +193,29 @@ ext_on_search () {
 ```
 
 # Other stuff of interest
-* [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - An extension for firefox and chromium-based browsers that lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
-* [`Invidious`](https://github.com/iv-org/invidious) - Light weight, privacy respecting front end for YouTube.
-* [`Piped`](https://github.com/TeamPiped/Piped) - Light weight, privacy respecting front end for YouTube with many extra features.
-* [`HyperPipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Privacy respecting front end for YouTube Music.
-* [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - YouTube front end for android with many extra features.
-* [`Libredirect`](https://github.com/libredirect/libredirect) - Extension to automatically redirect links to privacy respecting front ends.
+## Alternative front ends
+
+Alternative front ends allow for lightweight, privacy respecting YouTube browsing.
+
+* [`Invidious`](https://github.com/iv-org/invidious) - Alternative YouTube frontend.
+* [`Piped`](https://github.com/TeamPiped/Piped) - Alternative YouTube frontend with built in Sponsorblock and Return YouTube Dislike.
+* [`HyperPipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Alternative YouTube Music front end.
+* [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - Alternative YouTube frontend for android with built in Sponsorblock and Return YouTube Dislike.
+
+## Extensions
+
+* [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
+* [`Libredirect`](https://github.com/libredirect/libredirect) - Automatically redirects links to privacy respecting alternative front ends.
+* [`Return YouTube Dislike`](https://github.com/Anarios/return-youtube-dislike) - Brings back dislikes.
+* [`Sponsorblock`](https://github.com/ajayyy/SponsorBlock) - Automatically skips sponsored ads and other video segments.
+* [`Violentmonkey`](https://github.com/violentmonkey/violentmonkey) - Provides userscript support for browsers.
+
+## Userscripts
+Use these with Violentmonkey to make regular YouTube work better.
+* [`Simple YouTube Age Restriction Bypass`](https://greasyfork.org/en/scripts/423851-simple-youtube-age-restriction-bypass) - Watch age restricted videos without login or age verification.
+* [`Youtube shorts redirect`](https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect) - Redirects any `*.youtube.com/shorts/*` link to `*.youtube.com/watch?v=*`.
+* [`Resize YT To Window Size`](https://greasyfork.org/en/scripts/811-resize-yt-to-window-size) - Moves the video to the top of the page and fills the entire window with the player.
+* [`Return YouTube Dislike`](https://greasyfork.org/en/scripts/436115-return-youtube-dislike) - Userscript alternative for the Return YouTube Dislike extension.
+* [`'Video paused. Continue watching?' Auto confirmer`](https://greasyfork.org/en/scripts/377506-youtube-video-paused-continue-watching-auto-confirmer) - Automatically clicks 'Ok' for the 'Video paused. Continue watching?' dialog.
+* [`Kill YouTube Channel Video Autoplay`](https://greasyfork.org/en/scripts/399862-kill-youtube-channel-video-autoplay) - Kill autoplay on channel and user pages.
+* [`Youtube Unblocker Improved`](https://greasyfork.org/en/scripts/405713-youtube-unblocker-improved) - Auto redirects blocked videos to `invidious.snopyta.org`.
