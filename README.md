@@ -2,21 +2,6 @@
 
 This repository is intended to provide a consolidated guide for accessing YouTube from the command line on Linux. Much of this guide is also applicable to other operating systems.
 
----
-
-# Contents
-
-* [`Programs`](#Programs)
-* [`Scripts`](#Scripts for mpv)
-* [`Configuration`](#Configuration)
-* [`Aliases`](#Useful)
-* [`Tips`](#Tips)
-* [`RSS`](#RSS)
-* [`Important`](#Important)
-* [`Extra`](#Other)
-
----
-
 # Programs
 
 * [`ytfzf`](https://github.com/pystardust/ytfzf) - Searches YouTube.
@@ -107,29 +92,25 @@ slang=eng,en # auto select eng subs where possible
 reset-on-next-file=pause # prevent video starting paused
 ```
 
-# Useful shell aliases
-Make a search for all types of results (channel, playlist and video) and download high quality thumbnails.
+## shell
+### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
 
-`yts="ytfzf --type=all --thumbnail-quality=maxresdefault"` 
+Aliases for commonly used commands.
 
-Search for a channel and browse it's videos.
-
-`ytc="ytfzf --type=channel"`
-
-Scrape comments of a video. Search term should be video link. Does not download channel avatars because they can sometimes cover up long comments.
-
-`com="ytfzf -c comments --skip-thumb-download"`
-
-Scrape your subscription file and sort by upload date.
-
-`sub="ytfzf -c SI --sort"`
+```sh
+yts="ytfzf --type=all --thumbnail-quality=maxresdefault" # Make a earch and download high quality thumbnails.
+ytc="ytfzf --type=channel" # Search for a channel and browse it's videos.
+com="ytfzf -c comments --skip-thumb-download" # Scrape comments of a video. Search term should be video link.
+sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
+```
 
 # Tips for ytfzf
-* Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
+
 * ctrl-j/k moves you up and down the list of search results.
 * alt-p will scrape the next page of search results.
 * You can use tab to select and open multiple videos. First selected video will play and others will be added to the playlist in order.
 * ctrl-a (with my fzf settings) will allow you to select and open all videos. Useful for playlists.
+* Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
 * You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should be set up.
 * If you use dwm + swallow patch and want to loop menus, add `is_detach=1` to your config, otherwise thumbnails and menus will break when the window is restored.
 
@@ -211,7 +192,7 @@ Alternative front ends allow for lightweight, privacy respecting YouTube browsin
 * [`Violentmonkey`](https://github.com/violentmonkey/violentmonkey) - Provides userscript support for browsers.
 
 ## Userscripts
-Use these with Violentmonkey to make regular YouTube work better.
+Use these with the Violentmonkey extension to make regular YouTube better.
 * [`Simple YouTube Age Restriction Bypass`](https://greasyfork.org/en/scripts/423851-simple-youtube-age-restriction-bypass) - Watch age restricted videos without login or age verification.
 * [`Youtube shorts redirect`](https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect) - Redirects any `*.youtube.com/shorts/*` link to `*.youtube.com/watch?v=*`.
 * [`Resize YT To Window Size`](https://greasyfork.org/en/scripts/811-resize-yt-to-window-size) - Moves the video to the top of the page and fills the entire window with the player.
