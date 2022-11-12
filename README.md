@@ -200,3 +200,5 @@ Use these with the Violentmonkey extension to make regular YouTube better.
 * [`'Video paused. Continue watching?' Auto confirmer`](https://greasyfork.org/en/scripts/377506-youtube-video-paused-continue-watching-auto-confirmer) - Automatically clicks 'Ok' for the 'Video paused. Continue watching?' dialog.
 * [`Kill YouTube Channel Video Autoplay`](https://greasyfork.org/en/scripts/399862-kill-youtube-channel-video-autoplay) - Kill autoplay on channel and user pages.
 * [`Youtube Unblocker Improved`](https://greasyfork.org/en/scripts/405713-youtube-unblocker-improved) - Auto redirects blocked videos to `invidious.snopyta.org`.
+
+Many more userscripts can be found [here](https://greasyfork.org/en/scripts/by-site/youtube.com).
