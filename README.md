@@ -42,14 +42,18 @@ Some I don't use but may be of interest:
 A full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
 
 # Configuration
+
 ## ytfzf
+
 ### `~/.config/ytfzf/conf.sh`
 
 This is the main config file.
+
 ```sh
 pages_to_scrape=1
 sub_link_count=5
 show_thumbnails=1
+async_thumbnails=1
 url_handler_opts="--force-window=yes"
 ```
 
@@ -64,6 +68,7 @@ enable_back_button=0
 ```
 
 ## yt-dlp
+
 ### `~/.config/yt-dlp/config`
 
 These options will be respected by mpv when playing network streams. 
@@ -75,6 +80,7 @@ These options will be respected by mpv when playing network streams.
 ```
 
 ## mpv
+
 ### `~/.config/mpv/mpv.conf`
 
 Not going to include my entire config here, just the relevant parts.
@@ -85,6 +91,7 @@ slang=eng,en
 ```
 
 ## shell
+
 ### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
 
 Aliases for commonly used commands.
@@ -115,6 +122,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:sele
 * If you use dwm + swallow patch and want to loop menus, add `is_detach=1` to your config, otherwise thumbnails and menus will break when the window is restored.
 
 # RSS
+
 Although you can get subscriptions with ytfzf, it's not the most efficient way to do so for a few reasons:
 
 1. You can only scrape a small number of videos per channel before it becomes excessive.
@@ -140,6 +148,7 @@ Piped feeds currently provide less information than YouTube and Invidious.
 Invidious provides thumbnails, which neither Piped nor YouTube do.
 
 # Important Update
+
 As of Late 2022 YouTube has updated the way videos display on channel pages, making it troublesome to scrape them. Previously when a channel was scraped you would get all videos, but now you will only get 30 (the first page). The current work around is to scrape the channel as a playlist, since every channel has one for all it's videos. To do this you will need to add the following lines to `~/.config/ytfzf/conf.sh` and use the flag `--all-videos` with your aliases. 
 
 ```sh
@@ -174,6 +183,7 @@ ext_on_search () {
 ```
 
 # Other stuff of interest
+
 ## Alternative front ends
 
 Alternative front ends allow for lightweight, privacy respecting YouTube browsing.
@@ -192,7 +202,9 @@ Alternative front ends allow for lightweight, privacy respecting YouTube browsin
 * [`Violentmonkey`](https://github.com/violentmonkey/violentmonkey) - Provides userscript support for browsers.
 
 ## Userscripts
+
 Use these with the Violentmonkey extension to make regular YouTube better.
+
 * [`Simple YouTube Age Restriction Bypass`](https://greasyfork.org/en/scripts/423851-simple-youtube-age-restriction-bypass) - Watch age restricted videos without login or age verification.
 * [`Youtube shorts redirect`](https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect) - Redirects any `*.youtube.com/shorts/*` link to `*.youtube.com/watch?v=*`.
 * [`Resize YT To Window Size`](https://greasyfork.org/en/scripts/811-resize-yt-to-window-size) - Moves the video to the top of the page and fills the entire window with the player.
