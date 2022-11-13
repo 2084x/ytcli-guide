@@ -81,7 +81,6 @@ Not going to include my entire config here, just the relevant parts.
 
 ```sh
 vo=gpu
-gpu-api=vulkan
 profile=gpu-hq
 reset-on-next-file=pause # prevents video starting paused
 slang=eng,en
