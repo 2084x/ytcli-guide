@@ -97,9 +97,9 @@ slang=eng,en
 Aliases for commonly used commands.
 
 ```sh
-yts="ytfzf --type=all --thumbnail-quality=maxresdefault" # Make a earch and download high quality thumbnails.
+yts="ytfzf --type=all --thumbnail-quality=sddefault" # Make a search.
 ytc="ytfzf --type=channel" # Search for a channel and browse it's videos.
-com="ytfzf -c comments --skip-thumb-download" # Scrape comments of a video. Search term should be video link.
+com="ytfzf -c comments --skip-thumb-download" # Scrape comments. Search term should be video link.
 sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 ```
 
