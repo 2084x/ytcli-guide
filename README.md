@@ -80,8 +80,6 @@ These options will be respected by mpv when playing network streams.
 Not going to include my entire config here, just the relevant parts.
 
 ```sh
-vo=gpu
-profile=gpu-hq
 reset-on-next-file=pause # prevents video starting paused
 slang=eng,en
 ```
