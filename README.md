@@ -20,7 +20,7 @@ You should already have these, but just in case:
 
 Scripts should be placed in `~/.config/mpv/scripts`.
 
-Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`.
+Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`. 
 
 Some scripts have 'configs' inside the script itself. 
 
@@ -39,7 +39,11 @@ Some I don't use but may be of interest:
 * [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) - Download current video with a single key press.
 * [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads next video in the playlist by downloading to a local tmp file. Can be buggy and download audio and video out of sync.
 
-A full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
+The full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
+
+The full list of scripts I use can be found [here](https://github.com/2084x/rice/tree/master/.config/mpv/scripts)
+
+My script-opts folder can be found [here](https://github.com/2084x/rice/tree/master/.config/mpv/script-opts). 
 
 # Configuration
 
@@ -83,9 +87,12 @@ These options will be respected by mpv when playing network streams.
 
 ### `~/.config/mpv/mpv.conf`
 
-Not going to include my entire config here, just the relevant parts.
+My full config can be found [here](https://github.com/2084x/rice/blob/master/.config/mpv/mpv.conf). Below are the relevant lines for this guide.
 
 ```sh
+vo=gpu-next # only on v0.35
+gpu-api=vulkan # works best with gpu-next
+profile=gpu-hq
 reset-on-next-file=pause # prevents video starting paused
 slang=eng,en
 ```
