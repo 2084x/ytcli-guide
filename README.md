@@ -90,8 +90,8 @@ These options will be respected by mpv when playing network streams.
 My full config can be found [here](https://github.com/2084x/rice/blob/master/.config/mpv/mpv.conf). Below are the relevant lines for this guide.
 
 ```sh
-vo=gpu-next # only on v0.35
-gpu-api=vulkan # works best with gpu-next
+vo=gpu-next
+gpu-api=vulkan
 profile=gpu-hq
 reset-on-next-file=pause # prevents video starting paused
 slang=eng,en
@@ -197,7 +197,7 @@ Alternative front ends allow for lightweight, privacy respecting YouTube browsin
 
 * [`Invidious`](https://github.com/iv-org/invidious) - Alternative YouTube frontend.
 * [`Piped`](https://github.com/TeamPiped/Piped) - Alternative YouTube frontend with built in Sponsorblock and Return YouTube Dislike.
-* [`HyperPipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Alternative YouTube Music front end.
+* [`Hyperpipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Alternative YouTube Music front end.
 * [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - Alternative YouTube frontend for android with built in Sponsorblock and Return YouTube Dislike.
 
 ## Extensions
