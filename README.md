@@ -24,9 +24,8 @@ Some scripts have their own optional configs. These should be placed in `~/.conf
 
 Some scripts have 'configs' inside the script itself. 
 
-* [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) - Allows you to select video quality.
+* [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) - Allows you to select video quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script built in.
 * [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) - Fetches recommended videos for the current video.
-* [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) - Allows you to reload the current video if it freezes. Restarts where you left off.
 * [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other video segments. Also adds markers for these on the osc timeline.
 * [`copy-permalink`](https://gist.github.com/2084x/699fe48cff983bcbaf532d82e1515269) - Copies link of current video. Useful with 'com' alias.
 * [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - When a file ends, keeps the gui open if it's a video and closes if it's audio. Useful if you want to scrape recommended videos after a video ends.
