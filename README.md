@@ -208,6 +208,8 @@ Alternative front ends allow for lightweight, privacy respecting YouTube browsin
 * [`Hyperpipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Alternative YouTube Music front end.
 * [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - Alternative YouTube frontend for android with built in Sponsorblock and Return YouTube Dislike.
 
+More frontends for YouTube and similar projects for other sites can be found [here](https://github.com/mendel5/alternative-front-ends).
+
 ## Extensions
 
 * [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
