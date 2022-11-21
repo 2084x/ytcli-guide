@@ -28,16 +28,18 @@ Some scripts have 'configs' inside the script itself.
 * [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) - Fetches recommended videos and lets you add them to the playlist.
 * [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) - Lets you intuitively manage videos in the playlist.
 * [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other video segments.
-* [`copy-permalink`](https://gist.github.com/2084x/699fe48cff983bcbaf532d82e1515269) - Copies link of current video. Useful with 'com' alias.
-* [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - Keeps the player open when the playlist ends. Useful for scraping recommended videos after a video ends.
+* [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) - Generates thumbnail previews when hovering over the seekbar.
+* [`copy-permalink`](https://gist.github.com/2084x/61b88a75bc0d91ac74b1db057077b123) - Copies link of current video to the clipboard. Useful with 'com' alias.
+* [`copy-paste-url`](https://github.com/yassin-l/copy-paste-url) - Allows you to paste links into an open mpv window to start playback of a video.
+* [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends.
 
 Some I don't use but may be of interest:
 
-* [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) / [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) - Two scripts to search YouTube from inside mpv.
+* [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) / [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) - Two scripts to search YouTube from within mpv.
 * [`mpv_sponsorblock_minimal`](https://github.com/bbhtt/mpv_sponsorblock_minimal) - A Lightweight mpv_sponsorblock fork. Some features missing.
 * [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) - Automatically changes videos to your desired resolution. (I prefer to set this in my yt-dlp config).
 * [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) - Downloads current video with a single key press.
-* [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads next video in the playlist by downloading to a local tmp file. Can be buggy and download audio and video out of sync.
+* [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads next entry in the playlist by downloading to a local tmp file. In my experience, it can be buggy and download audio and video out of sync, likely due to having `--sponsorblock-remove` in `~/.config/yt-dlp/config`. This can probably be avoided by using `--sponsorblock-mark` and manually skipping chapters, but I haven't bothered to test it more.
 
 The full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
 
@@ -115,7 +117,7 @@ sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
 
 ```sh
-export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --bind=ctrl-a:select-all"
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --no-separator --bind=ctrl-a:select-all"
 ```
 
 # Tips for ytfzf
@@ -193,7 +195,7 @@ ext_on_search () {
 
 ## 2.
 
-Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~.config/yt-dlp/config`. Videos should now load fine in mpv, but obviously with no sponsorblocking, even if you are using the  [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) script.
+Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~/.config/yt-dlp/config`. Videos should now load fine in mpv, but obviously with no sponsorblocking, even if you are using the  [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) script.
 
 # Other stuff of interest
 
