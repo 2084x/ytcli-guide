@@ -29,8 +29,7 @@ Some scripts have 'configs' inside the script itself.
 * [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) - Lets you intuitively manage videos in the playlist.
 * [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other video segments.
 * [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) - Generates thumbnail previews when hovering over the seekbar.
-* [`copy-permalink`](https://gist.github.com/2084x/61b88a75bc0d91ac74b1db057077b123) - Copies link of current video to the clipboard. Useful with 'com' alias.
-* [`copy-paste-url`](https://github.com/yassin-l/copy-paste-url) - Allows you to paste links into an open mpv window to start playback of a video.
+* [`mpv-copy-paste`](https://github.com/2084x/mpv-copy-paste) - Simple script for copying, appending and loading links to and from the clipboard.
 * [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends.
 
 Some I don't use but may be of interest:
