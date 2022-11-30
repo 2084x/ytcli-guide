@@ -76,12 +76,14 @@ enable_back_button=0
 
 ### `~/.config/yt-dlp/config`
 
-These options will be respected by mpv when playing network streams. 
+These options will be respected by mpv when playing network streams or when using scripts that call yt-dlp. 
 
 ```sh
 -o ~/dl/%(title)s.%(ext)s
 --sponsorblock-remove default
--S "height:2160" 
+-S "height:2160"
+--embed-subs
+--sub-langs "en.*"
 ```
 
 ## mpv
@@ -100,6 +102,14 @@ slang=eng,en
 
 ## shell
 
+### `~/.bash_profile`, `~/.zprofile` etc.
+
+You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
+
+```sh
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --no-separator --bind=ctrl-a:select-all"
+```
+
 ### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
 
 Aliases for commonly used commands.
@@ -110,14 +120,6 @@ ytc="ytfzf --type=channel" # Search for a channel and browse it's videos.
 ytl="yts -L | xclip -i -selection clipboard" # Make a search and pipe the selected video's link to the clipboard.
 com="ytfzf -c comments --skip-thumb-download" # Scrape comments. Search term should be video link.
 sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
-```
-
-### `~/.bash_profile`, `~/.zprofile` etc.
-
-You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
-
-```sh
-export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --no-separator --bind=ctrl-a:select-all"
 ```
 
 # Tips for ytfzf
@@ -210,7 +212,7 @@ Alternative front ends allow for lightweight, privacy respecting YouTube browsin
 
 More frontends for YouTube and similar projects for other sites can be found [here](https://github.com/mendel5/alternative-front-ends).
 
-## Extensions
+## Browser extensions
 
 * [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
 * [`Libredirect`](https://github.com/libredirect/libredirect) - Automatically redirects links to privacy respecting alternative front ends.
