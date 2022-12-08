@@ -4,17 +4,17 @@ This repository is intended to provide a consolidated guide for accessing YouTub
 
 # Programs
 
-* [`ytfzf`](https://github.com/pystardust/ytfzf) - Searches YouTube.
-* [`fzf`](https://github.com/junegunn/fzf) - Default menu for selecting videos with ytfzf. [`dmenu`](https://tools.suckless.org/dmenu/) can also be used but some features will be missing. 
-* [`ueberzug`](https://github.com/seebye/ueberzug) - Generates thumbnails in the terminal. X11 only. See ytfzf page for wayland alternatives.
-* [`mpv`](https://github.com/mpv-player/mpv) - Default Media Player.
-* [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) - For downloading videos.
-* [`newsboat`](https://github.com/newsboat/newsboat) - For RSS feeds.
-
-You should already have these, but just in case:
-* [`ffmpeg`](https://github.com/FFmpeg/FFmpeg)
-* [`wget`](https://github.com/mirror/wget)
-* [`curl`](https://github.com/curl/curl)
+| Name | Use |
+| :--  | :-- |
+| [`ytfzf`](https://github.com/pystardust/ytfzf) | Searches YouTube. |
+| [`fzf`](https://github.com/junegunn/fzf) | Default menu for selecting videos with ytfzf. [`dmenu`](https://tools.suckless.org/dmenu/) can also be used but some features will be missing. |
+| [`ueberzug`](https://github.com/seebye/ueberzug) | Generates thumbnails in the terminal. X11 only. See ytfzf page for wayland alternatives. |
+| [`mpv`](https://github.com/mpv-player/mpv) | Default Media Player. |
+| [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) | For downloading videos. |
+| [`newsboat`](https://github.com/newsboat/newsboat) | For RSS feeds. |
+| [`ffmpeg`](https://ffmpeg.org) | For network streaming. |
+| [`wget`](https://www.gnu.org/software/wget) | For scraping data. |
+| [`curl`](https://github.com/curl/curl) | For scraping data. |
 
 # Scripts for mpv
 
@@ -23,22 +23,27 @@ Scripts should be placed in `~/.config/mpv/scripts`.
 Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`. 
 
 Some scripts have 'configs' inside the script itself. 
+| Name | Use |
+| :--  | :-- |
+| [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) | Allows you to select video quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script built in. |
+| [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) | Fetches recommended videos and lets you add them to the playlist. |
+| [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
+| [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored ads and other video segments. |
+| [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) | Generates thumbnail previews when hovering over the seekbar. |
+| [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) | Simple script to copy paths from and paste links into mpv. |
+| [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) | Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends. |
 
-* [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) - Allows you to select video quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script for reloading videos built in.
-* [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) - Fetches recommended videos and lets you add them to the playlist.
-* [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) - Lets you intuitively manage videos in the playlist.
-* [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other video segments.
-* [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) - Generates thumbnail previews when hovering over the seekbar.
-* [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) - Simple script to copy paths from and paste links into mpv.
-* [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends.
+Scripts I don't use but may be of interest:
 
-Some I don't use but may be of interest:
-
-* [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) / [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) - Two scripts to search YouTube from within mpv.
-* [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) - A Lightweight mpv_sponsorblock fork. Some features missing.
-* [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) - Automatically changes videos to your desired resolution. (I prefer to set this in my yt-dlp config).
-* [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) - Downloads current video with a single key press.
-* [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads next entry in the playlist by downloading to a local tmp file. In my experience, it can be buggy and download audio and video out of sync, likely due to having `--sponsorblock-remove` in `~/.config/yt-dlp/config`. This can probably be avoided by using `--sponsorblock-mark` and manually skipping chapters, but I haven't bothered to test it more.
+| Name | Use |
+| :--  | :-- |
+| [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) | Fully functioning sponsorblock. |
+| [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) | Search and open YouTube results from within mpv. |
+| [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) | Search and open YouTube results from within mpv usuing zenity. |
+| [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) | Automatically changes videos to your desired resolution. |
+| [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) | Downloads current audio or video with a single key press. |
+| [`thumbfast`](https://github.com/po5/thumbfast) | High-performance on-the-fly thumbnailer for mpv. Currently does not work well with network streams. |
+| [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) | Preloads next entry in the playlist by downloading to a local tmp file. 
 
 The full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
 
@@ -80,8 +85,9 @@ These options will be respected by mpv when playing network streams or when usin
 
 ```sh
 -o ~/dl/%(title)s.%(ext)s
---sponsorblock-remove default
 -S "height:2160"
+--sponsorblock-mark default
+--embed-metadata
 --embed-subs
 --sub-langs "en.*"
 ```
@@ -142,21 +148,16 @@ Although you can get subscriptions with ytfzf, it's not the most efficient way t
 
 Instead we can use RSS to get updates for new videos. Feeds can be viewed in an RSS feed reader such as [`newsboat`](https://github.com/newsboat/newsboat) and be updated automatically in the background. I suggest using Luke Smith's [dot files](https://github.com/LukeSmithxyz/voidrice/blob/master/.config/newsboat/config) and [scripts](https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/cron/newsup) to quickly set up newsboat and a cronjob to do updates. There are many other readers you could use, but I like newsboat because it's terminal based and can open videos in mpv with a single key press.
 
-There are two ways to get an RSS feed link for YouTube:
+To get a channel's RSS feed:
 
-1. Use the built in RSS on [`Invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped). Search an instance of either front end for a channel and click the RSS symbol. 
+1. Open a channel page using any [`Invidious`](https://github.com/iv-org/invidious) or [`Piped`](https://github.com/TeamPiped/Piped) instance. The channel ID is the long string of letters and numbers at the end of the link. 
+2. Slot the channel ID into either of the following feeds:
 
-The link should look something like this (Invidious): `https://yewtu.be/feed/channel/$CHANNELID`.
+* `https://www.youtube.com/feeds/videos.xml?channel_id=$CHANNELID` (for YouTube).
+* `https://$INSTANCE/feed/channel/$CHANNELID` (for Invidious).
+* `https://$INSTANCE/feed/unauthenticated/rss?channels=$CHANNELID` (for Piped).
 
-Or this (Piped): `https://piped.kavin.rocks/feed/unauthenticated/rss?channels=$CHANNELID`.
-
-2. Use YouTube's official RSS. Follow the first method to find the channel ID (the unique string of random numbers and letters), then slot it into the example link below.
-
-The link should look something like this: `https://www.youtube.com/feeds/videos.xml?channel_id=$CHANNELID`.
-
-Piped feeds currently provide less information than YouTube and Invidious. 
-
-Invidious provides thumbnails, which neither Piped nor YouTube do.
+Each feed works slightly differently. For example, Piped feeds currently provide less information and Invidious feeds provide thumbnails.
 
 # Important Updates
 
@@ -197,7 +198,7 @@ ext_on_search () {
 
 ## 2.
 
-Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~/.config/yt-dlp/config`. Videos should now load fine in mpv, but obviously with no sponsorblocking, even if you are using the  [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) script.
+Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~/.config/yt-dlp/config`. Videos should now load fine in mpv, but obviously with no sponsorblocking.
 
 # Other stuff of interest
 
@@ -205,31 +206,37 @@ Lately the sponsorblock servers have been experiencing frequent issues and long 
 
 Alternative front ends allow for lightweight, privacy respecting YouTube browsing.
 
-* [`Invidious`](https://github.com/iv-org/invidious) - Alternative YouTube frontend.
-* [`Piped`](https://github.com/TeamPiped/Piped) - Alternative YouTube frontend with built in Sponsorblock and Return YouTube Dislike.
-* [`Hyperpipe`](https://codeberg.org/Hyperpipe/Hyperpipe) - Alternative YouTube Music front end.
-* [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) - Alternative YouTube frontend for android with built in Sponsorblock and Return YouTube Dislike.
+| Name | Use |
+| :--  | :-- |
+| [`Invidious`](https://github.com/iv-org/invidious) | Alternative YouTube frontend. |
+| [`Piped`](https://github.com/TeamPiped/Piped) | Alternative YouTube frontend with built in Sponsorblock and Return YouTube Dislike. |
+| [`Hyperpipe`](https://codeberg.org/Hyperpipe/Hyperpipe) | Alternative YouTube Music front end. |
+| [`NewPipeSponsorBlock`](https://github.com/gilbsgilbs/NewPipeSponsorBlock) | Alternative YouTube frontend for android with built in Sponsorblock and Return YouTube Dislike. |
 
 More frontends for YouTube and similar projects for other sites can be found [here](https://github.com/mendel5/alternative-front-ends).
 
 ## Browser extensions
 
-* [`ff2mpv`](https://github.com/woodruffw/ff2mpv) - Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8).
-* [`Libredirect`](https://github.com/libredirect/libredirect) - Automatically redirects links to privacy respecting alternative front ends.
-* [`Return YouTube Dislike`](https://github.com/Anarios/return-youtube-dislike) - Brings back dislikes.
-* [`Sponsorblock`](https://github.com/ajayyy/SponsorBlock) - Automatically skips sponsored ads and other video segments.
-* [`Violentmonkey`](https://github.com/violentmonkey/violentmonkey) - Provides userscript support for browsers.
+| Name | Use |
+| :--  | :-- |
+| [`ff2mpv`](https://github.com/woodruffw/ff2mpv) | Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8). |
+| [`Libredirect`](https://github.com/libredirect/libredirect) | Automatically redirects links to privacy respecting alternative front ends. |
+| [`Return YouTube Dislike`](https://github.com/Anarios/return-youtube-dislike) | Brings back dislikes. |
+| [`Sponsorblock`](https://github.com/ajayyy/SponsorBlock) | Automatically skips sponsored ads and other video segments. |
+| [`Violentmonkey`](https://github.com/violentmonkey/violentmonkey) | Provides userscript support for browsers. |
 
 ## Userscripts
 
 Use these with the Violentmonkey extension to make regular YouTube better.
 
-* [`Simple YouTube Age Restriction Bypass`](https://greasyfork.org/en/scripts/423851-simple-youtube-age-restriction-bypass) - Watch age restricted videos without login or age verification.
-* [`Youtube shorts redirect`](https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect) - Redirects any `*.youtube.com/shorts/*` link to `*.youtube.com/watch?v=*`.
-* [`Resize YT To Window Size`](https://greasyfork.org/en/scripts/811-resize-yt-to-window-size) - Moves the video to the top of the page and fills the entire window with the player.
-* [`Return YouTube Dislike`](https://greasyfork.org/en/scripts/436115-return-youtube-dislike) - Userscript alternative for the Return YouTube Dislike extension.
-* [`'Video paused. Continue watching?' Auto confirmer`](https://greasyfork.org/en/scripts/377506-youtube-video-paused-continue-watching-auto-confirmer) - Automatically clicks 'Ok' for the 'Video paused. Continue watching?' dialog.
-* [`Kill YouTube Channel Video Autoplay`](https://greasyfork.org/en/scripts/399862-kill-youtube-channel-video-autoplay) - Kill autoplay on channel and user pages.
-* [`Youtube Unblocker Improved`](https://greasyfork.org/en/scripts/405713-youtube-unblocker-improved) - Auto redirects blocked videos to `invidious.snopyta.org`.
+| Name | Use |
+| :--  | :-- |
+| [`Simple YouTube Age Restriction Bypass`](https://greasyfork.org/en/scripts/423851-simple-youtube-age-restriction-bypass) | Watch age restricted videos without login or age verification.
+| [`Youtube shorts redirect`](https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect) | Redirects any `*.youtube.com/shorts/*` link to `*.youtube.com/watch?v=*`.
+| [`Resize YT To Window Size`](https://greasyfork.org/en/scripts/811-resize-yt-to-window-size) | Moves the video to the top of the page and fills the entire window with the player.
+| [`Return YouTube Dislike`](https://greasyfork.org/en/scripts/436115-return-youtube-dislike) | Userscript alternative for the Return YouTube Dislike extension.
+| [`'Continue watching?' Auto confirmer`](https://greasyfork.org/en/scripts/377506-youtube-video-paused-continue-watching-auto-confirmer) | Automatically clicks 'Ok' for the 'Video paused. Continue watching?' dialog.
+| [`Kill YouTube Channel Video Autoplay`](https://greasyfork.org/en/scripts/399862-kill-youtube-channel-video-autoplay) | Kill autoplay on channel and user pages.
+| [`Youtube Unblocker Improved`](https://greasyfork.org/en/scripts/405713-youtube-unblocker-improved) | Auto redirects blocked videos to `invidious.snopyta.org`.
 
 Many more userscripts can be found [here](https://greasyfork.org/en/scripts/by-site/youtube.com).
