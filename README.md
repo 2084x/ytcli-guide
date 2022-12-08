@@ -29,7 +29,7 @@ Some scripts have 'configs' inside the script itself.
 * [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) - Lets you intuitively manage videos in the playlist.
 * [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) - Automatically skips sponsored ads and other video segments.
 * [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) - Generates thumbnail previews when hovering over the seekbar.
-* [`mpv-copy-paste`](https://github.com/2084x/mpv-copy-paste) - Simple script for copying and pasting links from and into mpv.
+* [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) - Simple script to copy paths from and paste links into mpv.
 * [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) - Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends.
 
 Some I don't use but may be of interest:
@@ -96,8 +96,8 @@ My full config can be found [here](https://github.com/2084x/rice/blob/master/.co
 vo=gpu-next
 gpu-api=vulkan
 profile=gpu-hq
-reset-on-next-file=pause # prevents video starting paused
-slang=eng,en
+reset-on-next-file=pause
+slang=eng,en,en-us
 ```
 
 ## shell
