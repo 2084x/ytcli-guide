@@ -30,7 +30,8 @@ Some scripts have 'configs' inside the script itself.
 | [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
 | [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored ads and other video segments. |
 | [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) | Generates thumbnail previews when hovering over the seekbar. |
-| [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) | Simple script to copy paths from and paste links into mpv. |
+| [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) | Copies paths from and pastes links into mpv. |
+| [`ytdl`](https://github.com/2084x/mpv-tools/blob/main/ytdl.lua) | Downloads current video with yt-dlp. |
 | [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) | Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends. |
 
 Scripts I don't use but may be of interest:
