@@ -35,7 +35,7 @@ Some scripts have 'configs' inside the script itself.
 Some I don't use but may be of interest:
 
 * [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) / [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) - Two scripts to search YouTube from within mpv.
-* [`mpv_sponsorblock_minimal`](https://github.com/bbhtt/mpv_sponsorblock_minimal) - A Lightweight mpv_sponsorblock fork. Some features missing.
+* [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) - A Lightweight mpv_sponsorblock fork. Some features missing.
 * [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) - Automatically changes videos to your desired resolution. (I prefer to set this in my yt-dlp config).
 * [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) - Downloads current video with a single key press.
 * [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) - Preloads next entry in the playlist by downloading to a local tmp file. In my experience, it can be buggy and download audio and video out of sync, likely due to having `--sponsorblock-remove` in `~/.config/yt-dlp/config`. This can probably be avoided by using `--sponsorblock-mark` and manually skipping chapters, but I haven't bothered to test it more.
