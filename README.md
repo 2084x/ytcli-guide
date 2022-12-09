@@ -197,7 +197,7 @@ ext_on_search () {
 
 ## 2.
 
-Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~/.config/yt-dlp/config`. Videos should now load fine in mpv, but obviously with no sponsorblocking.
+Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~/.config/yt-dlp/config`.
 
 # Other stuff of interest
 
