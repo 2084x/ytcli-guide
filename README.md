@@ -4,17 +4,15 @@ This repository is intended to provide a consolidated guide for accessing YouTub
 
 # Programs
 
-| Name | Use |
+| Name | Description |
 | :--  | :-- |
-| [`ytfzf`](https://github.com/pystardust/ytfzf) | Searches YouTube. |
-| [`fzf`](https://github.com/junegunn/fzf) | Default menu for selecting videos with ytfzf. [`dmenu`](https://tools.suckless.org/dmenu/) can also be used but some features will be missing. |
-| [`ueberzug`](https://github.com/seebye/ueberzug) | Generates thumbnails in the terminal. X11 only. See ytfzf page for wayland alternatives. |
-| [`mpv`](https://github.com/mpv-player/mpv) | Default Media Player. |
-| [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) | For downloading videos. |
-| [`newsboat`](https://github.com/newsboat/newsboat) | For RSS feeds. |
-| [`ffmpeg`](https://ffmpeg.org) | For network streaming. |
-| [`wget`](https://www.gnu.org/software/wget) | For scraping data. |
-| [`curl`](https://github.com/curl/curl) | For scraping data. |
+| [`ytfzf`](https://github.com/pystardust/ytfzf) | A POSIX script to find and watch YouTube videos from the terminal. |
+| [`fzf`](https://github.com/junegunn/fzf) | Command-line fuzzy finder and default menu for ytfzf. [`dmenu`](https://tools.suckless.org/dmenu/) can also be used but some features will be missing. |
+| [`ueberzug`](https://github.com/seebye/ueberzug) | X11 terminal image generator. See ytfzf page for wayland alternatives. |
+| [`mpv`](https://github.com/mpv-player/mpv) | A free, open source, and cross-platform media player. Default player for ytfzf. |
+| [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) | A youtube-dl fork with additional features and fixes. |
+| [`newsboat`](https://github.com/newsboat/newsboat) | An RSS/Atom feed reader for text terminals. |
+| [`wget`](https://www.gnu.org/software/wget) | Network utility to retrieve files from the web. |
 
 # Scripts for mpv
 
@@ -23,20 +21,19 @@ Scripts should be placed in `~/.config/mpv/scripts`.
 Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`. 
 
 Some scripts have 'configs' inside the script itself. 
-| Name | Use |
+| Name | Description |
 | :--  | :-- |
-| [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) | Allows you to select video quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script built in. |
+| [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) | Allows you to change video and audio quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script built in. |
 | [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) | Fetches recommended videos and lets you add them to the playlist. |
 | [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
 | [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored ads and other video segments. |
 | [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) | Generates thumbnail previews when hovering over the seekbar. |
 | [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) | Copies paths from and pastes links into mpv. |
 | [`ytdl`](https://github.com/2084x/mpv-tools/blob/main/ytdl.lua) | Downloads current video with yt-dlp. |
-| [`auto-keep-gui-open`](https://github.com/VideoPlayerCode/mpv-tools/blob/master/scripts/auto-keep-gui-open.lua) | Intelligently switches mpv's "keep-open" behavior based on whether you are running in video-mode or audio-only mode. Useful for scraping recommended videos after a video ends. |
 
 Scripts I don't use but may be of interest:
 
-| Name | Use |
+| Name | Description |
 | :--  | :-- |
 | [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) | Fully functioning sponsorblock. |
 | [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) | Search and open YouTube results from within mpv. |
@@ -74,6 +71,7 @@ This is the config file for playlist and channel pages.
 
 ```sh
 show_thumbnails=1
+async_thumbnails=1
 url_handler_opts="--force-window=yes"
 enable_back_button=0
 ```
@@ -207,7 +205,7 @@ Lately the sponsorblock servers have been experiencing frequent issues and long 
 
 Alternative front ends allow for lightweight, privacy respecting YouTube browsing.
 
-| Name | Use |
+| Name | Description |
 | :--  | :-- |
 | [`Invidious`](https://github.com/iv-org/invidious) | Alternative YouTube frontend. |
 | [`Piped`](https://github.com/TeamPiped/Piped) | Alternative YouTube frontend with built in Sponsorblock and Return YouTube Dislike. |
@@ -218,7 +216,7 @@ More frontends for YouTube and similar projects for other sites can be found [he
 
 ## Browser extensions
 
-| Name | Use |
+| Name | Description |
 | :--  | :-- |
 | [`ff2mpv`](https://github.com/woodruffw/ff2mpv) | Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8). |
 | [`Libredirect`](https://github.com/libredirect/libredirect) | Automatically redirects links to privacy respecting alternative front ends. |
@@ -230,7 +228,7 @@ More frontends for YouTube and similar projects for other sites can be found [he
 
 Use these with the Violentmonkey extension to make regular YouTube better.
 
-| Name | Use |
+| Name | Description |
 | :--  | :-- |
 | [`Simple YouTube Age Restriction Bypass`](https://greasyfork.org/en/scripts/423851-simple-youtube-age-restriction-bypass) | Watch age restricted videos without login or age verification.
 | [`Youtube shorts redirect`](https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect) | Redirects any `*.youtube.com/shorts/*` link to `*.youtube.com/watch?v=*`.
