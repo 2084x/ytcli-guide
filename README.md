@@ -20,14 +20,13 @@ Scripts should be placed in `~/.config/mpv/scripts`.
 
 Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`. 
 
-Some scripts have 'configs' inside the script itself. 
 | Name | Description |
 | :--  | :-- |
 | [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) | Allows you to change video and audio quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script built in. |
 | [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) | Fetches recommended videos and lets you add them to the playlist. |
 | [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
-| [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored ads and other video segments. |
-| [`mpv_thumbnail_script`](https://github.com/marzzzello/mpv_thumbnail_script) | Generates thumbnail previews when hovering over the seekbar. |
+| [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored segments of videos. |
+| [`thumbfast`](https://github.com/po5/thumbfast) | High-performance on-the-fly thumbnailer. |
 | [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) | Copies paths from and pastes links into mpv. |
 | [`ytdl`](https://github.com/2084x/mpv-tools/blob/main/ytdl.lua) | Downloads current video with yt-dlp. |
 
@@ -35,19 +34,14 @@ Scripts I don't use but may be of interest:
 
 | Name | Description |
 | :--  | :-- |
-| [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) | Fully functioning sponsorblock. |
 | [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) | Search and open YouTube results from within mpv. |
 | [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) | Search and open YouTube results from within mpv usuing zenity. |
+| [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) | Automatically skips sponsored segments of videos. Provides full functionality. |
 | [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) | Automatically changes videos to your desired resolution. |
-| [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) | Downloads current audio or video with a single key press. |
-| [`thumbfast`](https://github.com/po5/thumbfast) | High-performance on-the-fly thumbnailer for mpv. Currently does not work well with network streams. |
+| [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) | Downloads current audio, video or subtitle with a single key press. |
 | [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) | Preloads next entry in the playlist by downloading to a local tmp file. 
 
-The full list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
-
-The full list of scripts I use can be found [here](https://github.com/2084x/rice/tree/master/.config/mpv/scripts)
-
-My script-opts folder can be found [here](https://github.com/2084x/rice/tree/master/.config/mpv/script-opts). 
+A comprehensive list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
 
 # Configuration
 
@@ -89,13 +83,14 @@ These options will be respected by mpv when playing network streams or when usin
 --embed-metadata
 --embed-subs
 --sub-langs "en.*"
+--merge-output-format "mkv"
 ```
 
 ## mpv
 
 ### `~/.config/mpv/mpv.conf`
 
-My full config can be found [here](https://github.com/2084x/rice/blob/master/.config/mpv/mpv.conf). Below are the relevant lines for this guide.
+I highly suggest reading the mpv manual to understand what the flags in the first three lines do. They are dependent on your hardware and are not guaranteed to produce good results on every system. You may want to use different options or omit them entirely. 
 
 ```sh
 vo=gpu-next
@@ -104,6 +99,8 @@ profile=gpu-hq
 reset-on-next-file=pause
 slang=eng,en,en-us
 ```
+
+My full `mpv.conf` can be found [here](https://github.com/2084x/rice/blob/master/.config/mpv/mpv.conf). 
 
 ## shell
 
@@ -129,13 +126,13 @@ sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 
 # Tips for ytfzf
 
-* ctrl-j/k moves you up and down the list of search results.
-* alt-p will scrape the next page of search results.
-* You can use tab to select and open multiple videos. First selected video will play and others will be added to the playlist in order.
-* ctrl-a (with my fzf settings) will allow you to select and open all videos. Useful for playlists.
+* ctrl-j/k moves you up and down the list of results.
+* alt-p will scrape the next page of results.
+* You can use tab to select and open multiple videos. Videos will be added to the playlist in order of selection.
+* ctrl-a (with my fzf default opts) will allow you to select and open all results. Useful for playlists.
 * Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
-* You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should be set up.
-* If you use dwm + swallow patch and want to loop menus, add `is_detach=1` to your config, otherwise thumbnails and menus will break when the window is restored.
+* You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should look.
+* If you use dwm + swallow patch, thumbnails will break when the terminal is restored. Open a new terminal to get thumbnails back for your next search. Alternatively, if you want to loop the menu with `-l`, you will also need to detach the player with `--detach` so that the terminal doesn't get swallowed and thumbnails remain intact.
 
 # RSS
 
@@ -158,9 +155,7 @@ To get a channel's RSS feed:
 
 Each feed works slightly differently. For example, Piped feeds currently provide less information and Invidious feeds provide thumbnails.
 
-# Important Updates
-
-## 1.
+# Important Update
 
 As of Late 2022 YouTube has updated the way videos display on channel pages, making it troublesome to scrape them. Previously when a channel was scraped you would get all videos, but now you will only get 30 (the first page). The current work around is to scrape the channel as a playlist, since every channel has one for all it's videos. To do this you will need to add the following lines to `~/.config/ytfzf/conf.sh` and use the flag `--all-videos` with your aliases. 
 
@@ -194,10 +189,6 @@ ext_on_search () {
     fi
 }
 ```
-
-## 2.
-
-Lately the sponsorblock servers have been experiencing frequent issues and long periods of downtime. If you have trouble loading videos, remove any sponsorblock lines from `~/.config/yt-dlp/config`.
 
 # Other stuff of interest
 
