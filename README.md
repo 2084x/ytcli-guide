@@ -78,7 +78,7 @@ These options will be respected by mpv when playing network streams or when usin
 
 ```sh
 -o ~/dl/%(title)s.%(ext)s
--S "height:2160"
+-S "res:2160"
 --sponsorblock-mark all,-poi_highlight
 --embed-metadata
 --embed-subs
