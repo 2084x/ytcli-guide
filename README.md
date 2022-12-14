@@ -27,8 +27,8 @@ Some scripts have their own optional configs. These should be placed in `~/.conf
 | [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
 | [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored segments of videos. |
 | [`thumbfast`](https://github.com/po5/thumbfast) | High-performance on-the-fly thumbnailer. |
-| [`copy-paste`](https://github.com/2084x/mpv-tools/blob/main/copy-paste.lua) | Copies paths from and pastes links into mpv. |
-| [`ytdl`](https://github.com/2084x/mpv-tools/blob/main/ytdl.lua) | Downloads current video with yt-dlp. |
+| [`yap`](https://github.com/2084x/mpv-tools/blob/main/yap.lua) | Yanks, appends and puts links. |
+| [`yt-dl`](https://github.com/2084x/mpv-tools/blob/main/yt-dl.lua) | Downloads current video with yt-dlp. |
 
 Scripts I don't use but may be of interest:
 
@@ -44,6 +44,8 @@ Scripts I don't use but may be of interest:
 A comprehensive list of scripts for mpv can be found [here](https://github.com/mpv-player/mpv/wiki/User-Scripts). 
 
 # Configuration
+
+These are the config files I use. I recommend reading the manuals to see what all the options do and changing them to suit your use case.
 
 ## ytfzf
 
@@ -90,7 +92,7 @@ These options will be respected by mpv when playing network streams or when usin
 
 ### `~/.config/mpv/mpv.conf`
 
-I highly suggest reading the mpv manual to understand what the flags in the first three lines do. They are dependent on your hardware and are not guaranteed to produce good results on every system. You may want to use different options or omit them entirely. 
+I **highly** recommend reading the mpv manual to understand what the flags in the first three lines do. They are dependent on your hardware and are **not** guaranteed to produce good results or even work at all on every system. You may want to use different options or omit them entirely. 
 
 ```sh
 vo=gpu-next
@@ -109,7 +111,7 @@ My full `mpv.conf` can be found [here](https://github.com/2084x/rice/blob/master
 You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
 
 ```sh
-export FZF_DEFAULT_OPTS="--layout=reverse -e -m --height=100% --no-separator --bind=ctrl-a:select-all"
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-x:toggle+down,ctrl-a:select-all,ctrl-u:deselect-all"
 ```
 
 ### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
@@ -128,8 +130,8 @@ sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 
 * ctrl-j/k moves you up and down the list of results.
 * alt-p will scrape the next page of results.
-* You can use tab to select and open multiple videos. Videos will be added to the playlist in order of selection.
 * ctrl-a (with my fzf default opts) will allow you to select and open all results. Useful for playlists.
+* You can use tab or ctrl+x (with my fzf default opts) to select and open multiple videos. Videos will be added to the playlist in order of selection.
 * Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
 * You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should look.
 * If you use dwm + swallow patch, thumbnails will break when the terminal is restored. Open a new terminal to get thumbnails back for your next search. Alternatively, if you want to loop the menu with `-l`, you will also need to detach the player with `--detach` so that the terminal doesn't get swallowed and thumbnails remain intact.
