@@ -111,7 +111,7 @@ My full `mpv.conf` can be found [here](https://github.com/2084x/rice/blob/master
 You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
 
 ```sh
-export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-n:first,ctrl-p:last,ctrl-a:select-all,ctrl-u:deselect-all"
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-p:first,ctrl-n:last,ctrl-a:select-all,ctrl-u:deselect-all"
 ```
 
 ### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
@@ -130,8 +130,8 @@ sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 
 * ctrl-j/k moves you up and down the list of results.
 * alt-p will scrape the next page of results.
-* ctrl-a (with my fzf default opts) will allow you to select and open all results. Useful for playlists.
-* You can use tab or ctrl+x (with my fzf default opts) to select and open multiple videos. Videos will be added to the playlist in order of selection.
+* ctrl-a/u (with my fzf default opts) will allow you to select and deselect open all results. Useful for opening entire playlists.
+* You can use tab or ctrl+i to select and open multiple videos. Videos will be added to the playlist in order of selection.
 * Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
 * You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should look.
 * If you use dwm + swallow patch, thumbnails will break when the terminal is restored. Open a new terminal to get thumbnails back for your next search. Alternatively, if you want to loop the menu with `-l`, you will also need to detach the player with `--detach` so that the terminal doesn't get swallowed and thumbnails remain intact.
