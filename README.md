@@ -111,7 +111,7 @@ My full `mpv.conf` can be found [here](https://github.com/2084x/rice/blob/master
 You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
 
 ```sh
-export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-x:toggle+down,ctrl-a:select-all,ctrl-u:deselect-all"
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-n:first,ctrl-p:last,ctrl-a:select-all,ctrl-u:deselect-all"
 ```
 
 ### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
