@@ -79,7 +79,7 @@ enable_back_button=0
 These options will be respected by mpv when playing network streams or when using scripts that call yt-dlp. 
 
 ```sh
--o ~/dl/yt/%(title)s.%(ext)s
+-o ~/dl/%(title)s.%(ext)s
 -S "res:2160"
 --sponsorblock-mark all,-poi_highlight
 --embed-metadata
