@@ -133,7 +133,7 @@ sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 * ctrl-a/u (with my fzf default opts) will allow you to select and deselect open all results. Useful for opening entire playlists.
 * You can use tab or ctrl+i to select and open multiple videos. Videos will be added to the playlist in order of selection.
 * Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
-* You can add a subscriptions file to scrape a list of channels for their most recent uploads. See the ytfzf manual for how the file should look.
+* You can add a subscriptions file to scrape a list of channels for their most recent uploads. See [here](https://github.com/pystardust/ytfzf/blob/master/docs/subscriptions) for an example.
 * If you use dwm + swallow patch, thumbnails will break when the terminal is restored. Open a new terminal to get thumbnails back for your next search. Alternatively, if you want to loop the menu with `-l`, you will also need to detach the player with `--detach` so that the terminal doesn't get swallowed and thumbnails remain intact.
 
 # RSS
