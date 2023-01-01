@@ -121,7 +121,7 @@ Aliases for commonly used commands.
 ```sh
 yts="ytfzf --type=all --thumbnail-quality=sddefault" # Make a search.
 ytc="ytfzf --type=channel" # Search for a channel and browse it's videos.
-ytl="yts -L | xclip -i -selection clipboard" # Make a search and pipe the selected video's link to the clipboard.
+ytl="yts -L | tr -d '\n' | xclip -i -selection clipboard" # Make a search and copy the selected video's link to the clipboard.
 com="ytfzf -c comments --skip-thumb-download" # Scrape comments. Search term should be video link.
 sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
 ```
