@@ -1,43 +1,49 @@
 # ytcli-guide
 
-This repository is intended to provide a consolidated guide for accessing YouTube from the command line on Linux. Much of this guide is also applicable to other operating systems.
+This repository is intended to provide a consolidated guide for accessing YouTube from the command line on Linux.
+
+Much of this guide is also applicable to other operating systems.
 
 # Programs
 
 | Name | Description |
 | :--  | :-- |
 | [`ytfzf`](https://github.com/pystardust/ytfzf) | A POSIX script to find and watch YouTube videos from the terminal. |
-| [`fzf`](https://github.com/junegunn/fzf) | Command-line fuzzy finder and default menu for ytfzf. [`dmenu`](https://tools.suckless.org/dmenu/) can also be used but some features will be missing. |
-| [`ueberzug`](https://github.com/seebye/ueberzug) | X11 terminal image generator. See ytfzf page for wayland alternatives. |
-| [`mpv`](https://github.com/mpv-player/mpv) | A free, open source, and cross-platform media player. Default player for ytfzf. |
+| [`fzf`](https://github.com/junegunn/fzf) | Command-line fuzzy finder. |
+| [`ueberzug`](https://github.com/seebye/ueberzug) | X11 terminal image generator. |
+| [`mpv`](https://github.com/mpv-player/mpv) | A free, open source, and cross-platform media player. |
 | [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) | A youtube-dl fork with additional features and fixes. |
-| [`newsboat`](https://github.com/newsboat/newsboat) | An RSS/Atom feed reader for text terminals. |
-| [`wget`](https://www.gnu.org/software/wget) | Network utility to retrieve files from the web. |
+| [`newsboat`](https://github.com/newsboat/newsboat) | An RSS / Atom feed reader for text terminals. |
+
+Wayland thumbnail viewers and alternative menus can be found [here](https://github.com/pystardust/ytfzf#Dependencies).
 
 # Scripts for mpv
 
-Scripts should be placed in `~/.config/mpv/scripts`.
+User scripts extend the functionality of mpv.
 
-Some scripts have their own optional configs. These should be placed in `~/.config/mpv/script-opts`. 
+They are placed in `~/.config/mpv/scripts`.
+
+Script configs are placed in `~/.config/mpv/script-opts`. 
+
+**Core:**
 
 | Name | Description |
 | :--  | :-- |
-| [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) | Allows you to change video and audio quality. Also has the [`reload`](https://github.com/sibwaf/mpv-scripts/blob/master/reload.lua) script built in. |
+| [`quality-menu`](https://github.com/christoph-heinrich/mpv-quality-menu) | Allows you to change video / audio quality and reload files. |
 | [`youtube-upnext`](https://github.com/cvzi/mpv-youtube-upnext) | Fetches recommended videos and lets you add them to the playlist. |
-| [`mpv-playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
-| [`mpv_sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored segments of videos. |
+| [`playlistmanager`](https://github.com/jonniek/mpv-playlistmanager) | Lets you intuitively manage videos in the playlist. |
+| [`sponsorblock_minimal`](https://codeberg.org/jouni/mpv_sponsorblock_minimal) | Automatically skips sponsored segments of videos. |
 | [`thumbfast`](https://github.com/po5/thumbfast) | High-performance on-the-fly thumbnailer. |
-| [`yap`](https://github.com/2084x/mpv-tools/blob/main/yap.lua) | Yanks, appends and puts links. |
-| [`yt-dl`](https://github.com/2084x/mpv-tools/blob/main/yt-dl.lua) | Downloads current video with yt-dlp. |
+| [`yap`](https://github.com/2084x/mpv-tools/blob/main/yap.lua) | Yanks, appends and puts paths / links. |
+| [`dl`](https://github.com/2084x/mpv-tools/blob/main/dl.lua) | Downloads current video with yt-dlp. |
 
-Scripts I don't use but may be of interest:
+**Extra:**
 
 | Name | Description |
 | :--  | :-- |
 | [`youtube-search`](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua) | Search and open YouTube results from within mpv. |
-| [`mpv-youtube-search`](https://github.com/rozari0/mpv-youtube-search) | Search and open YouTube results from within mpv usuing zenity. |
-| [`mpv_sponsorblock`](https://github.com/po5/mpv_sponsorblock) | Automatically skips sponsored segments of videos. Provides full functionality. |
-| [`mpv-ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) | Automatically changes videos to your desired resolution. |
+| [`sponsorblock`](https://github.com/po5/mpv_sponsorblock) | Automatically skips sponsored segments of videos. Provides full functionality. |
+| [`ytdlAutoFormat`](https://github.com/Samillion/mpv-ytdlautoformat) | Automatically changes videos to your desired resolution based on the domain. |
 | [`youtube-download`](https://github.com/cvzi/mpv-youtube-download) | Downloads current audio, video or subtitle with a single key press. |
 | [`ytdl-preload`](https://gist.github.com/bitingsock/17d90e3deeb35b5f75e55adb19098f58) | Preloads next entry in the playlist by downloading to a local tmp file. 
 
@@ -45,31 +51,35 @@ A comprehensive list of scripts for mpv can be found [here](https://github.com/m
 
 # Configuration
 
-These are the config files I use. I recommend reading the manuals to see what all the options do and changing them to suit your use case.
+These are my config files. I recommend reading the manuals to see what all the options do and changing them to suit your use case.
 
 ## ytfzf
 
 ### `~/.config/ytfzf/conf.sh`
 
-This is the main config file.
+This is the main config file. You can optionally specify configurations for submenus in `~/.config/ytfzf/submenu-conf.sh`, but I prefer to use the same options for both menu types by setting `keep_vars=1`.
 
 ```sh
-pages_to_scrape=1
-sub_link_count=5
+# scraping
+search_result_type=all
+invidious_instance="https://inv.riverside.rocks"
+
+# menu
 show_thumbnails=1
-async_thumbnails=1
-url_handler_opts="--force-window=yes"
-```
-
-### `~/.config/ytfzf/submenu-conf.sh`
-
-This is the config file for playlist and channel pages.
-
-```sh
-show_thumbnails=1
-async_thumbnails=1
+thumbnail_quality=maxres
 url_handler_opts="--force-window=yes"
 enable_back_button=0
+keep_vars=1
+
+# keybinds
+download_shortcut=D
+video_shortcut=ctrl-o
+audio_shortcut=ctrl-x
+print_link_shortcut=ctrl-l
+info_shortcut=ctrl-i
+next_page_shortcut=ctrl-n
+detach_shortcut=ctrl-w
+search_again_shortcut=ctrl-s
 ```
 
 ## yt-dlp
@@ -92,13 +102,21 @@ These options will be respected by mpv when playing network streams or when usin
 
 ### `~/.config/mpv/mpv.conf`
 
-I **highly** recommend reading the mpv manual to understand what the flags in the first three lines do. They are dependent on your hardware and are **not** guaranteed to produce good results or even work at all on every system. You may want to use different options or omit them entirely. 
+I **highly** recommend reading the mpv manual to understand what the first five flags do. They are dependent on your hardware and are **not** guaranteed to produce good results or even work at all. You may want to use different options or omit them entirely. 
 
 ```sh
+# video
 vo=gpu-next
 gpu-api=vulkan
 profile=gpu-hq
+demuxer-max-bytes=1024MiB
+demuxer-max-back-bytes=1024MiB
 reset-on-next-file=pause
+
+# audio
+alang=jpn,jp,ja,ko,kor,chi,ch,zh,eng,en
+
+# subs
 slang=eng,en,en-us
 ```
 
@@ -111,7 +129,7 @@ My full `mpv.conf` can be found [here](https://github.com/2084x/rice/blob/master
 You can optionally set `FZF_DEFAULT_OPTS` in `~/.config/ytfzf/conf.sh`, but I prefer to set them in my shell profile since it's system wide. 
 
 ```sh
-export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-p:first,ctrl-n:last,ctrl-a:select-all,ctrl-u:deselect-all"
+export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --ellipsis=~ --bind=ctrl-o:accept,ctrl-space:toggle+down,ctrl-u:page-up,ctrl-d:page-down,ctrl-a:select-all,ctrl-v:deselect-all,ctrl-r:clear-screen,ctrl-i:,ctrl-l:,ctrl-w:"
 ```
 
 ### `~/.bashrc`, `~/.config/shell/aliasrc` etc.
@@ -119,22 +137,10 @@ export FZF_DEFAULT_OPTS="--layout=reverse -e -m --no-separator --bind=ctrl-p:fir
 Aliases for commonly used commands.
 
 ```sh
-yts="ytfzf --type=all --thumbnail-quality=sddefault" # Make a search.
-ytc="ytfzf --type=channel" # Search for a channel and browse it's videos.
-ytl="yts -L | tr -d '\n' | xclip -i -selection clipboard" # Make a search and copy the selected video's link to the clipboard.
-com="ytfzf -c comments --skip-thumb-download" # Scrape comments. Search term should be video link.
-sub="ytfzf -c SI --sort" # Scrape subscription file and sort by upload date.
+yts="ytfzf" # Make a search.
+ytl="yts -L | tr -d '\n' | xclip -i -selection clipboard" # Make a search and copy link to the clipboard.
+com="yts -c comments --skip-thumb-download" # Scrape comments. Search term should be video link.
 ```
-
-# Tips for ytfzf
-
-* ctrl-j/k moves you up and down the list of results.
-* alt-p will scrape the next page of results.
-* ctrl-a/u (with my fzf default opts) will allow you to select and deselect open all results. Useful for opening entire playlists.
-* You can use tab or ctrl+i to select and open multiple videos. Videos will be added to the playlist in order of selection.
-* Run `ytfzf --rii` occasionally to refresh healthy invidious instances.
-* You can add a subscriptions file to scrape a list of channels for their most recent uploads. See [here](https://github.com/pystardust/ytfzf/blob/master/docs/subscriptions) for an example.
-* If you use dwm + swallow patch, thumbnails will break when the terminal is restored. Open a new terminal to get thumbnails back for your next search. Alternatively, if you want to loop the menu with `-l`, you will also need to detach the player with `--detach` so that the terminal doesn't get swallowed and thumbnails remain intact.
 
 # RSS
 
@@ -157,39 +163,49 @@ To get a channel's RSS feed:
 
 Each feed works slightly differently. For example, Piped feeds currently provide less information and Invidious feeds provide thumbnails.
 
-# Important Update
+# Important update
 
-As of Late 2022 YouTube has updated the way videos display on channel pages, making it troublesome to scrape them. Previously when a channel was scraped you would get all videos, but now you will only get 30 (the first page). The current work around is to scrape the channel as a playlist, since every channel has one for all it's videos. To do this you will need to add the following lines to `~/.config/ytfzf/conf.sh` and use the flag `--all-videos` with your aliases. 
+As of Late 2022 YouTube has updated the way videos display on channel pages, making it troublesome to scrape them. Previously when a channel was scraped you would get all it's videos, but now you will only get the first thirty results. The current work around is to scrape the channel as a playlist. To do this you will need to add the following script to `~/.config/ytfzf/extensions/allvideos`.
 
 ```sh
-#keeps track of whether or not --all-videos is used
-CONFIG_invidious_all_videos=0
+#!/bin/sh
 
-#is run when --all-videos is parsed
+# addon for getting all videos from a channel after youtube redesign
+# to use, add --all-videos to search options
+# or set the variable below to 1
+all_videos=0
+
+# is run when --all-videos is parsed
 on_opt_parse_all_videos () {
-    CONFIG_invidious_all_videos=1
+    all_videos=1
 
-   #returning 1 says to override the default  behavior (in this case that would be printing an error)
+    # returning 1 says to override the default behavior (in this case that would be printing an error)
     return 1
 }
 
-#is run right before it starts scraping
+# is run right before it starts scraping
 ext_on_search () {
     search=$1
     scrape=$2
 
-    #only  want to change stuff if the scrape is invidious-channel and --all-videos was used.
-    if [ "$scrape" = "invidious-channel" ] && [ "$CONFIG_invidious_all_videos" -eq 1 ]; then
-        #overrides the current scraper
+    # only want to change stuff if the scrape is invidious-channel and --all-videos was used.
+    if [ "$scrape" = "invidious-channel" ] && [ "$all_videos" -eq 1 ]; then
+        # overrides the current scraper
         curr_scrape=invidious_playlist
 
-        #gets the channel id for the playlist link
+        # gets the channel id for the playlist link
         set_real_channel_url_and_id "$search"
 
-        #overrides the search with a new one
-        _search="https://www.youtube.com/playlist?list=$channel_id"
+        # overrides the search with a new one
+        _search="$invidious_instance/playlist?list=$channel_id"
     fi
 }
+```
+
+To use the script, place the following line in `~/.config/ytfzf/submenu-conf.sh`.
+
+```sh
+load_extension allvideos
 ```
 
 # Other stuff of interest
@@ -211,7 +227,7 @@ More frontends for YouTube and similar projects for other sites can be found [he
 
 | Name | Description |
 | :--  | :-- |
-| [`ff2mpv`](https://github.com/woodruffw/ff2mpv) | Lets you right click links and open them in mpv. [Installation guide](https://youtube.com/watch?v=jfyt5ueyWN8). |
+| [`ff2mpv`](https://github.com/woodruffw/ff2mpv) | Lets you right click links and open them in mpv. |
 | [`Libredirect`](https://github.com/libredirect/libredirect) | Automatically redirects links to privacy respecting alternative front ends. |
 | [`Return YouTube Dislike`](https://github.com/Anarios/return-youtube-dislike) | Brings back dislikes. |
 | [`Sponsorblock`](https://github.com/ajayyy/SponsorBlock) | Automatically skips sponsored ads and other video segments. |
