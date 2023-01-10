@@ -109,8 +109,8 @@ I **highly** recommend reading the mpv manual to understand what the first five 
 vo=gpu-next
 gpu-api=vulkan
 profile=gpu-hq
-demuxer-max-bytes=1024MiB
-demuxer-max-back-bytes=1024MiB
+demuxer-max-bytes=1GiB
+demuxer-max-back-bytes=1GiB
 reset-on-next-file=pause
 
 # audio
