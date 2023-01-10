@@ -102,7 +102,7 @@ These options will be respected by mpv when playing network streams or when usin
 
 ### `~/.config/mpv/mpv.conf`
 
-I **highly** recommend reading the mpv manual to understand what the first five flags do. They are dependent on your hardware and are **not** guaranteed to produce good results or even work at all. You may want to use different options or omit them entirely. 
+I **highly** recommend reading the [mpv manual](https://mpv.io/manual/master/) to understand what the first five options do. They are dependent on your hardware and are **not** guaranteed to produce good results or even work at all. You may want to use different options or omit them entirely. If you have high-end hardware, it's worth checking out some of the scaling and interpolation options found [here](https://wiki.archlinux.org/title/Mpv#High_quality_configurations) or in the [manual](https://mpv.io/manual/master/#gpu-renderer-options).
 
 ```sh
 # video
